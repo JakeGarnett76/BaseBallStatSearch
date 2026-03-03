@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BaseBallStatSearch.Entities;
+namespace BaseballStatSearchMVC.Models;
 
 public partial class Biofile2025
 {
