@@ -5,6 +5,8 @@ namespace BaseballStatSearchMVC.Models;
 
 public partial class Team
 {
+    public int Id { get; set; }
+
     public string Team1 { get; set; } = null!;
 
     public string? League { get; set; }
