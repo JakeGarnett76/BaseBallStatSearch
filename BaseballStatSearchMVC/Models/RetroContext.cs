@@ -64,10 +64,11 @@ public partial class RetroContext : DbContext
 
         modelBuilder.Entity<Biofile2025>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("biofile2025");
+            entity.ToTable("biofile2025");
 
+            entity.Property(e => e.Id)
+                .HasMaxLength(50)
+                .HasColumnName("id");
             entity.Property(e => e.AltName)
                 .HasMaxLength(50)
                 .HasColumnName("altName");
@@ -125,9 +126,6 @@ public partial class RetroContext : DbContext
             entity.Property(e => e.Hof)
                 .HasMaxLength(50)
                 .HasColumnName("hof");
-            entity.Property(e => e.Id)
-                .HasMaxLength(50)
-                .HasColumnName("id");
             entity.Property(e => e.LastCoach).HasColumnName("lastCoach");
             entity.Property(e => e.LastManager).HasColumnName("lastManager");
             entity.Property(e => e.LastName)
