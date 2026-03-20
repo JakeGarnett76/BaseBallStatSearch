@@ -33,10 +33,13 @@ public partial class RetroContext : DbContext
     {
         modelBuilder.Entity<Ballpark>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("ballparks");
+            entity.HasKey(e => e.ParkId);
 
+            entity.ToTable("ballparks");
+
+            entity.Property(e => e.ParkId)
+                .HasMaxLength(50)
+                .HasColumnName("parkId");
             entity.Property(e => e.Aka)
                 .HasMaxLength(100)
                 .HasColumnName("aka");
@@ -53,9 +56,6 @@ public partial class RetroContext : DbContext
             entity.Property(e => e.Notes)
                 .HasMaxLength(100)
                 .HasColumnName("notes");
-            entity.Property(e => e.ParkId)
-                .HasMaxLength(50)
-                .HasColumnName("parkId");
             entity.Property(e => e.Start).HasColumnName("start");
             entity.Property(e => e.State)
                 .HasMaxLength(50)
