@@ -150,6 +150,9 @@ public partial class RetroContext : DbContext
                 .HasNoKey()
                 .ToTable("coaches2025");
 
+            entity.Property(e => e.CoachId)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("coachId");
             entity.Property(e => e.End).HasColumnName("end");
             entity.Property(e => e.Id)
                 .HasMaxLength(50)

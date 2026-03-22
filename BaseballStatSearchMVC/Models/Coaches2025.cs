@@ -5,6 +5,8 @@ namespace BaseballStatSearchMVC.Models;
 
 public partial class Coaches2025
 {
+    public int CoachId { get; set; }
+
     public string Id { get; set; } = null!;
 
     public short Year { get; set; }
